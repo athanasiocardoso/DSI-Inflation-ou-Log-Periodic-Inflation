@@ -40,7 +40,6 @@ This repository contains the full source code and numerical data used to produce
 
 *   `/figures`: Contains all figures used in the paper.
 *   `/source`: Contains the LaTeX source files (`.tex`, `.bib`) for compiling the paper.
-*   `/data`: Contains the raw numerical output from the simulations (`.csv` files).
 
 ### How to Compile
 
