@@ -1,6 +1,6 @@
 # Log-Periodic Modulations in Starobinsky Inflation (DSI)
 
-**Authors:** Jonathan Athanasio Rosa, Silvio Graciola Junior  
+**Authors:** Jonathan Athanasio Rosa
 **Version:** 2.0 (08/29/2025)  
 **Status:** This work presents a refined and more rigorous analysis, superseding the previous version based on a quadratic potential.
 
