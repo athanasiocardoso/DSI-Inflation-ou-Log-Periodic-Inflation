@@ -1,0 +1,229 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\title{Log-Periodic Modulations in Starobinsky Inflation (DSI)}
+\author{Jonathan Athanasio Rosa\\[2pt]
+\normalsize Independent Researcher}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We revisit Starobinsky plateau inflation with a small log-periodic (discrete scale invariance, DSI) modulation of the potential and compute the induced oscillatory features in the primordial curvature spectrum. Our main aim is to introduce DSI as a novel symmetry principle in inflationary cosmology: discrete rescalings of the inflaton field lead naturally to log-periodic modulations, providing a controlled framework to explore new physics beyond standard slow roll. Working consistently to first order in the modulation amplitude $A\ll 1$, we correct common pitfalls in the literature: the normalization of the plateau potential, the $\mathcal{O}(A)$ expansions for $V'/V$, $\epsilon_V$, and the fractional residual of the power spectrum $R(k)$, the form of the Friedmann equation in $e$-fold time $N$, and the mapping between $k$ and $N$ including the $\ln H$ correction. Calibrating the base model to Planck 2018 values ($A_s\simeq2.1\times10^{-9}$, $n_s\simeq0.965$) and consistent bounds on $r$ from BICEP/Keck, we show that amplitudes $A\sim10^{-4}\!-\!5\times10^{-4}$ yield sub-percent to percent-level oscillations for moderate frequencies ($\omega\sim\mathcal O(5)$), comfortably compatible with current non-detections. For larger frequencies ($\omega\sim 30$), the same amplitudes instead produce order-$10\%$ residuals, approaching present observational limits. We thus establish DSI as a theoretically consistent and observationally constrained extension of plateau inflation, and highlight it as a concrete target for upcoming CMB and 21cm surveys.
+\end{abstract}
+
+
+\bigskip
+\noindent\textbf{Keywords:} Discrete scale invariance (DSI); Inflation; Starobinsky model; Primordial power spectrum; Oscillatory features; CMB; Slow roll.
+
+\section{Introduction}
+
+Plateau inflation models---chiefly the Starobinsky $R^2$ model and $\alpha$-attractors---fit the CMB with remarkable accuracy, predicting $n_s \simeq 1-2/N$ and $r\simeq 12/N^2$ for $N\sim 50$--$60$ $e$-folds \cite{Planck2018Inflation,Planck2018Params,KalloshLindeRoest2013,Starobinsky1980,Starobinsky1983}. Planck 2018 finds $n_s=0.9649\pm 0.0042$ and $\ln(10^{10}A_s)=3.044\pm0.014$, i.e.\ $A_s\simeq 2.1\times10^{-9}$, with no evidence for large deviations from scale invariance \cite{Planck2018Params}. The current upper bound on the tensor-to-scalar ratio is at the few percent level; combining with BICEP/Keck 2018 yields $r_{0.05}\lesssim 0.032$ (95\% CL) \cite{Paoletti2022}.
+
+Despite the success of featureless spectra, small residual modulations remain observationally allowed. Oscillatory patterns in $\ln k$ have been motivated ...in several frameworks, such as \cite{CalcagniKuroyanagi2023}.
+
+
+\section{Starobinsky Plateau with Log-Periodic Modulation}
+\label{sec:theory}
+
+We work in reduced Planck units ($M_{\rm Pl}=1$). The Starobinsky (Einstein-frame) potential is
+\begin{equation}
+V_0(\phi) = V_* \left(1 - e^{-\alpha \phi}\right)^2,
+\qquad \alpha = \sqrt{\tfrac{2}{3}}, \qquad 
+V_* = \tfrac{3}{4} M^2,
+\end{equation}
+We work in reduced Planck units ($M_{\rm Pl}=1$).
+
+
+We introduce a \emph{multiplicative} modulation,
+\begin{equation}
+V(\phi)=V_0(\phi)\left[1+A\,\cos\!\left(\omega \ln\frac{\phi}{\phi_c}+\theta\right)\right],
+\qquad 0<A\ll 1,
+\label{eq:Vmod}
+\end{equation}
+with dimensionless amplitude $A$, log-frequency $\omega$, phase $\theta$, and reference scale $\phi_c$. This realizes an approximate DSI: $\ln\phi\to \ln\phi+2\pi/\omega$ leaves the phase invariant (mod $2\pi$). The multiplicative choice keeps $V>0$ and makes the expansion in $A$ transparent.
+
+
+\section{Analytical Expansions to First Order in \texorpdfstring{$A$}{A}}
+\label{sec:analytics}
+
+Define $f(\phi)=\cos\big(\omega\ln(\phi/\phi_c)+\theta\big)$. To first order, $\ln V=\ln V_0+A f+\mathcal{O}(A^2)$, hence
+\begin{equation}
+\frac{V'}{V}
+=\left(\frac{V'}{V}\right)_0 + A f'(\phi)+\mathcal{O}(A^2),
+\qquad
+f'(\phi)=-\frac{\omega}{\phi}\,\sin\!\left(\omega\ln\frac{\phi}{\phi_c}+\theta\right),
+\label{eq:VprimeOverV}
+\end{equation}
+where the base ratio
+\begin{equation}
+\left(\frac{V'}{V}\right)_0
+=\frac{d}{d\phi}\ln\Big[(1-e^{-\alpha\phi})^2\Big]
+=\frac{2\alpha\,e^{-\alpha\phi}}{1-e^{-\alpha\phi}}
+\label{eq:Xbase}
+\end{equation}
+is small on the plateau. The potential slow-roll parameter
+\begin{equation}
+\epsilon_V(\phi)\equiv \frac12\left(\frac{V'}{V}\right)^2
+=\epsilon_{V0}(\phi)+A\,\left(\frac{V'}{V}\right)_0 f'(\phi)+\mathcal{O}(A^2),\qquad 
+\epsilon_{V0}=\frac12\left(\frac{V'}{V}\right)_0^2.
+\label{eq:epsV}
+\end{equation}
+
+\paragraph{Friedmann and $N$-time.}
+With $dN\equiv H\,dt$ and $\phi_N\equiv d\phi/dN$, the exact identities are
+\begin{equation}
+\epsilon_H\equiv -\frac{d\ln H}{dN}=\frac12\,\phi_N^2,\qquad
+H^2=\frac{V(\phi)}{3-\tfrac12\,\phi_N^2}\,,
+\label{eq:FriedmannN}
+\end{equation}
+so the slow-roll limit gives $H^2\simeq V/3$ and $\phi_N\simeq -V'/V$ (sign chosen for rolling down).
+
+\paragraph{Horizon exit mapping.}
+For a mode $k$, at horizon crossing $k=aH$ and
+\begin{equation}
+\ln\left(\frac{k}{k_*}\right) = (N - N_*) + \ln\left(\frac{H(N)}{H_*}\right).
+\end{equation}
+
+The $\ln H$ term is $\mathcal{O}(\epsilon)$ but relevant for precise phase in $\ln k$.
+
+\paragraph{Power spectrum and residual.}
+To leading order in slow roll,
+\begin{equation}
+\boxed{~
+R(k) \equiv \frac{P_{\mathcal R}(k)}{P_{0}(k)} - 1 
+\simeq A\left[f(\phi_k) - \frac{2 f'(\phi_k)}{X(\phi_k)}\right]
+~}
+\end{equation}
+
+where $\phi_k$ is evaluated at $k$-exit. Let $P_0(k)=V_0/(24\pi^2\,\epsilon_{V0})$ be the unmodulated spectrum. Using $V=V_0(1+Af)$ and $\epsilon_V=\epsilon_{V0}+A\,X f'$, with $X\equiv(V'/V)_0$, we obtain the \emph{fractional residual}
+\begin{equation}
+\boxed{~
+R(k)\;\equiv\;\frac{P_{\mathcal R}(k)}{P_0(k)}-1
+\;\simeq\;
+A\Bigg[f(\phi_k)\;-\; \frac{2\,f'(\phi_k)}{X(\phi_k)}\Bigg]
+\,,}
+\label{eq:Residual}
+\end{equation}
+valid to $\mathcal{O}(A)$. Equation \eqref{eq:Residual} shows a leading cosine in $\ln k$ plus a sine term with a phase shift proportional to $f'/X$; both vary lentamente ao longo das escalas CMB via $\phi_k$.
+
+\paragraph{Perturbativity and practical bounds on $A$.}
+On the plateau, $X\sim \mathcal{O}(10^{-2})$ while $|f'|\le \omega/\phi$. A conservative slow-roll--safe condition is $|A f'|<X$, i.e.
+\begin{equation}
+A \;<\; \frac{X\,\phi}{\omega}\,.
+\label{eq:Amax}
+\end{equation}
+For typical CMB exit $\phi\sim 5$, $X\sim 0.02$ and $\omega\sim 5$, one finds $A_{\rm max}\sim 0.02$. Much tighter is the requirement that the \emph{relative} modulation of $\epsilon$ stay small:
+\begin{equation}
+\frac{\Delta\epsilon_V}{\epsilon_{V0}}
+= \frac{2A\,f'}{X}
+\;\lesssim\;{\rm few}\,\%\;\Rightarrow\;
+A\;\lesssim\;{\rm few}\times10^{-4}\,.
+\label{eq:Apercent}
+\end{equation}
+We therefore adopt $A\in[10^{-4},5\times10^{-4}]$ in our examples, with the caveat de que amplitudes efetivas crescem com $\omega$.
+
+\section{Numerical Methodology}
+\label{sec:numerics}
+
+We integrate the background in $N$ using Eqs.~\eqref{eq:FriedmannN} and the exact field equation
+\begin{equation}
+\phi_{NN}+(3-\epsilon_H)\phi_N + \frac{V'(\phi)}{H^2}=0,\qquad 
+\epsilon_H=\frac12\phi_N^2,\quad H^2=\frac{V}{3-\tfrac12\phi_N^2}\,.
+\label{eq:fieldN}
+\end{equation}
+Initial conditions are chosen on the plateau with $\phi$ large enough to yield $N_{\rm tot}\gtrsim 60$, and $\phi_N$ initialized by the slow-roll estimate $\phi_N\simeq -V'/V$. We stop at $\epsilon_H=1$ (end of inflation). The mapping $k\leftrightarrow N$ uses Eq.~\eqref{eq:kNmap}; we include $\ln(H/H_\*)$ to set phases accurately. The scalar spectrum (Eq.~\eqref{eq:Pk}) is computed at horizon exit; we optionally validate with the Mukhanov--Sasaki equation in test runs (not shown).
+
+\section{Results}
+\label{sec:results}
+
+We adopt a baseline calibrated to $A_s\simeq 2.1\times 10^{-9}$ at $k_\*=0.05~{\rm Mpc}^{-1}$ with $N_\*\simeq 55$--$60$, which fixes $V_\*$ (hence $M$) in Eq.~\eqref{eq:V0}. For the modulation we show benchmarks with 
+\[
+(A,\omega,\phi_c,\theta)=(3\times10^{-4},5,10^{-2},0)
+\quad\text{and}\quad
+(3\times10^{-4},30,5,0).
+\]
+
+\paragraph{Field trajectory.} 
+The inflaton $\phi(N)$ remains monotonic; the modulation induces tiny ripples superimposed on the smooth plateau roll.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.75\textwidth]{phi_vs_N.pdf}
+\caption{\textbf{Inflaton field vs.\ $N$.} Trajectories for the modulated (solid) and unmodulated (dashed) Starobinsky model. Parameters shown here: $A=3\times10^{-4}$, $\omega=5$, $\phi_c=10^{-2}$, $\theta=0$. Ripples are small and increase mildly as $\phi$ approaches the end of inflation.}
+\label{fig:phiN}
+\end{figure}
+
+\paragraph{Slow-roll parameter.}
+The Hubble slow-roll parameter $\epsilon_H(N)=\tfrac12\phi_N^2$ exhibits oscillations consistent with Eq.~\eqref{eq:Apercent}. 
+For $\omega=5$ the modulation remains at the $\lesssim 1\%$ level, while for $\omega=30$ the same $A$ yields oscillations approaching the ${\cal O}(10\%)$ level.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.75\textwidth]{epsilon_vs_N.pdf}
+\caption{\textbf{$\epsilon_H(N)$}. Comparison of modulated (solid) and unmodulated (dashed) cases. For $\omega=5$ the oscillatory residual is $\lesssim1\%$, while for $\omega=30$ it grows to the $\sim 10\%$ level.}
+\label{fig:epsN}
+\end{figure}
+
+\paragraph{Primordial spectrum and residual.}
+The scalar power spectrum follows the usual tilted power law with superimposed wiggles. The residual $R(k)$ in Eq.~\eqref{eq:Residual} is well fit by a single harmonic with slowly drifting phase across the observable $\ln k$ range. 
+Again, for $\omega=5$ the fractional residual is $\lesssim{\cal O}(1\%)$, while for $\omega=30$ it reaches ${\cal O}(10\%)$ given $A=3\times10^{-4}$.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.75\textwidth]{PR_vs_k.pdf}
+\caption{\textbf{Primordial power spectrum}. $P_{\mathcal R}(k)$ for the modulated model (blue) versus Starobinsky baseline (red). For $\omega=5$ the modulation imprints percent-level oscillations, while for $\omega=30$ the same $A$ produces order-$10\%$ deviations.}
+\label{fig:PR}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.75\textwidth]{residual_vs_k.pdf}
+\caption{\textbf{Residual} $R(k)=[P_{\mathcal R}(k)/P_{0}(k)]-1$. The curve follows the analytic form $A\,[\,f-2f'/X\,]$. The amplitude depends strongly on $\omega$: percent-level for $\omega=5$, order-$10\%$ for $\omega=30$.}
+\label{fig:residual}
+\end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The corrected expressions clarify how DSI modulations map into observables:
+(i) the derivative $f'(\phi)$ introduces a sine component with amplitude $\propto \omega/\phi$;
+(ii) the ratio $f'/X$ governs the phase shift and the size of the residual; and
+(iii) slow evolution of $X(\phi)$ produces a mild drift of the effective frequency in $\ln k$.
+Given current non-detections of oscillatory features \cite{Meerburg2014,Planck2018Inflation}, the conservative range $A\sim 10^{-4}$--$5\times10^{-4}$ is well motivated for moderate $\omega$.
+The tensor prediction of Starobinsky, $r\simeq 12/N^2\sim 0.003$--$0.004$, remains far below present limits \cite{Paoletti2022}.
+
+It is worth stressing that while moderate frequencies ($\omega\sim 5$) with $A\sim10^{-4}$--$5\times10^{-4}$ lead to percent-level residuals fully consistent with current constraints, larger frequencies ($\omega\sim 30$) push the residual amplitude to the ${\cal O}(10\%)$ level. Such cases are already close to being excluded by Planck and BICEP/Keck bounds on oscillatory features, and therefore only the low-$\omega$ region of parameter space remains safely viable at present.
+
+\section{Conclusions}
+
+We provided a complete, corrected treatment of log-periodic modulations in Starobinsky inflation, suitable for data analysis. Key outcomes are:
+
+(1) correct first-order formulas for $V'/V$, $\epsilon_V$, and the residual 
+$R(k)=A\,[\,f-2f'/X\,]$;
+
+(2) consistent Friedmann equation in $N$ and $k$--$N$ mapping with $\ln H$;
+
+(3) calibrated normalization to Planck $A_s$ and realistic priors for $A$ consistent with slow-roll and feature searches.
+
+A crucial result is the strong dependence of the residual amplitude on the log-frequency $\omega$:  
+for moderate values ($\omega\sim 5$) and $A\sim 10^{-4}$--$5\times10^{-4}$, the oscillations remain at the $\lesssim 1\%$ level across CMB scales, comfortably within current bounds and therefore still viable.  
+In contrast, for larger frequencies ($\omega\sim 30$) the same amplitudes produce ${\cal O}(10\%)$ residuals, which would already have been visible in the Planck power spectrum. Such high-frequency cases are therefore effectively ruled out.
+
+In summary, strong DSI signals are excluded by present data, but small-amplitude, low-frequency oscillations remain a realistic possibility. This narrows the window of viable parameter space, but also provides a well-defined target for future high-precision probes such as CMB-S4, LiteBIRD, or 21cm surveys, which could decisively test the remaining allowed regime.
+
+
+\section*{Acknowledgments}
+The author thanks colleagues for discussions on inflationary features. No external funding was used.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}
